@@ -15,8 +15,8 @@ class FollowAccountPage {
     return $("id:profile_header_follow_button");
   }
 
-  get textFollowing() {
-    return $('xpath://android.widget.Button[@content-desc="Mengikuti SanberCode"]');
+  get tabHome() {
+    return $('xpath://android.widget.FrameLayout[@content-desc="Beranda"]/android.view.ViewGroup/android.widget.FrameLayout/android.widget.ImageView');
   }
 
   async clickTabSearch() {
@@ -36,8 +36,8 @@ class FollowAccountPage {
     await this.buttonFollow.click();
   }
 
-  async assertFollow() {
-    return this.textFollowing.getAttribute("text");
+  async clickTabHome() {
+    await this.tabHome.click();
   }
 }
 
